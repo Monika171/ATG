@@ -37,28 +37,26 @@ class ATGController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
+     
+         //Create Post
+         //$test = Test::updateOrCreate(['test_name' => $request->test_name, $request->all()]);
+        
+
+        $request->validate([
             'name'    => 'required|string|max:255',
             'email'   => 'required|string|email|max:255',
             'pincode' => 'required|numeric|digits_between:6,6',
         ]);
-
-
-        /*$validatedData = $request->validate([
-            'title' => 'required|unique:posts|max:255',
-            'body' => 'required',
-        ]);*/
-
-         //Create Post
-         $atg = new atg;
-         $atg->name = $request->input('name');
-         $atg->email = $request->input('email');
-         $atg->pincode = $request->input('pincode');
-         $atg->save();
- 
-         return redirect('/atg')->with('success', 'New Record Successfully Added');
-        //return 123;
-    }
+        
+        
+        //$atg   = atg::updateOrCreate($request->all());
+        
+        
+        $input = $request->all();
+        $atg   = atg::firstOrCreate(array('name' => $input['name'], 'email' => $input['email'], 'pincode' => $input['pincode']));
+        return redirect('/atg')->with('success', 'New Record Successfully Added');
+        
+       }
 
     /**
      * Display the specified resource.

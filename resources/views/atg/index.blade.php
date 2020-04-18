@@ -6,7 +6,7 @@
         @foreach($atgrecord as $atgr)
             
                 <h3>{{$atgr->name}}</h3>
-             <small>Joined on {{$atgr->created_at}}</small>
+             <small>email: {{$atgr->email}} , pincode: {{$atgr->pincode}}</small>
              
         @endforeach
     

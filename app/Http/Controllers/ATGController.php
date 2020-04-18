@@ -15,7 +15,7 @@ class ATGController extends Controller
     public function index()
     {
         //return atg::all();
-        $atgrecord = atg::all();
+        $atgrecord = atg::orderBy('created_at','desc')->get();
         return view('atg.index')->with('atgrecord',$atgrecord);
     }
 

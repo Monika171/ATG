@@ -1,9 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\AtgMail;
 use App\atg;
 
-use Illuminate\Http\Request;
+
 
 class ATGController extends Controller
 {
@@ -49,8 +53,16 @@ class ATGController extends Controller
         
         $input = $request->all();
         $atg   = atg::firstOrCreate(array('name' => $input['name'], 'email' => $input['email'], 'pincode' => $input['pincode']));
+        $email = $input['email'];
+        $user = ([
+            'name' => $input['name'],
+            'email' => $input['email'],
+            'pincode' => $input['pincode'],
+            ]);
+        Mail::to($email)->send(new AtgMail($user));
         return redirect('/atg')->with('success', 'New Record Successfully Added');
-        
+    
+
        }
 
     /**

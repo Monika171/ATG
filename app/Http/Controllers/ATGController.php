@@ -9,6 +9,7 @@ use App\atg;
 
 
 
+
 class ATGController extends Controller
 {
     /**

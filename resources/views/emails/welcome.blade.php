@@ -1,17 +1,20 @@
 
- 
  @extends('layouts.app')
  @section('content')
- <div class="text-center">
- <h3>
-Hi {{$data['name']}}, welcome to ATG.
-Your Account Details are: <br>
-</h3>
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <title>Welcome to ATG</title>
+ </head>
+ 
+ <body>
+ <h2>Welcome to ATG {{$user['name']}}</h2>
+ <br/>
 
-
- <h4>Email:</h4><p>{{$data['email']}}</p>
- <h4>Name: </h4><p>{{$data['name']}}</p>
- <h4>Pincode: </h4><p>{{$data['pincode']}}</p>
+ Your registered pincode is {{$user['pincode']}}
+ </body>
+ 
+ </html>
 
 </div>
 @endsection

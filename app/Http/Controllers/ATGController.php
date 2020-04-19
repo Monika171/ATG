@@ -39,18 +39,13 @@ class ATGController extends Controller
     {
      
          //Create Post
-         //$test = Test::updateOrCreate(['test_name' => $request->test_name, $request->all()]);
-        
+              
 
         $request->validate([
             'name'    => 'required|string|max:255',
             'email'   => 'required|string|email|max:255',
             'pincode' => 'required|numeric|digits_between:6,6',
         ]);
-        
-        
-        //$atg   = atg::updateOrCreate($request->all());
-        
         
         $input = $request->all();
         $atg   = atg::firstOrCreate(array('name' => $input['name'], 'email' => $input['email'], 'pincode' => $input['pincode']));

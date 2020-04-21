@@ -9,7 +9,6 @@ use App\atg;
 
 
 
-
 class ATGController extends Controller
 {
     /**
@@ -32,6 +31,8 @@ class ATGController extends Controller
     public function create()
     {
         return view('atg.create');
+
+         
     }
 
     /**
@@ -62,6 +63,8 @@ class ATGController extends Controller
             ]);
         Mail::to($email)->send(new AtgMail($user));
         return redirect('/atg')->with('success', 'New Record Successfully Added');
+
+       //return response()->json(["message" => "record created"], 201);
     
 
        }

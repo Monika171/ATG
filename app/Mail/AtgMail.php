@@ -32,13 +32,7 @@ class AtgMail extends Mailable
      */
     public function build()
     {
-        //$user = $this->user;
         $subject = 'Welcome';
-
-        /*$this->withSwiftMessage(function ($message) use($user) {
-            $message->user = $user;
-      });*/
-
         return $this->view('emails.welcome')->subject($subject);
     }
 }

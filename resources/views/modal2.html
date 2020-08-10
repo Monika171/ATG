@@ -1,0 +1,34 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-success" data-toggle="modal" data-target="#editskills{{$user->id}}">
+Edit
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="editskills{{$user->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+ <form action="/profile/skills/edit" method="post">@csrf
+  <div class="modal-dialog">
+    <div class="modal-content">
+		  <div class="modal-header">
+			<h5 class="modal-title" id="exampleModalLabel">Edit Skills</h5>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			  <span aria-hidden="true">&times;</span>
+			</button>
+		  </div>
+		  <div class="modal-body">
+           <select class="form-control selectedskills" multiple="multiple" placeholder="Select State" name="skills[]">
+			  <option></option>
+			  @foreach($skills as $skill)
+				<option value="{{$skill->id}}">{{$skill->skill}}</option>
+			  @endforeach
+		  </select>
+
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			  <button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		</div>
+	</div>
+	</form>	
+	</div>

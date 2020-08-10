@@ -49,7 +49,7 @@ return view('pages.about');
 ● "There should NOT be any duplicate data. So, in case I am entering the same data twice, I should get a flash message or some notification that the data already exists in the DB"----- (hmm still trying to look for a simple and efficient way)
 ● On successful entering the data, there should be a notification too.
 
-2. When user successfully enters new/different data, user registered should get an email (we can just put a LOG statement that ‘EMAIL SENT’. But what) if I actually send an email (using mailtrap), then how do I record in LOG file? Event Listeners?)
+2. When user successfully enters new/different data, user registered should get an email (we can just put a LOG statement that ‘EMAIL SENT’. But what if I actually send an email (using mailtrap), then how do I record in LOG file? Event Listeners?
 Also, If the email sending fails, we should be able to LOG that error as well.
 
 3. Create a Restful API in a new controller file (WebServicesController.php) for the previous tasks. A human readable API request and response with status:0|1 and message as two mandatory response keys.

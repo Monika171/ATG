@@ -21,3 +21,20 @@ Route::get('/', function () {
 Route::get('/', 'PagesController@index');
 
 Route::resource('atg','ATGController');
+
+Route::get('/getStates/{id}', 'ATGController@getStates');
+Route::get('/getCities/{id}', 'ATGController@getCities');
+
+/////////////////////////
+
+//Route::get('/','ImageController@album');
+
+Route::get('/album','ImageController@index');
+
+Route::post('/album','ImageController@store')->name('album.store');
+Route::post('/album/image','ImageController@addImage')->name('album.image');
+
+Route::get('albums/{id}','ImageController@show');
+Route::post('image/delete','ImageController@destroy')->name('image.delete');
+
+

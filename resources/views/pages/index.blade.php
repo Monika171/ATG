@@ -6,12 +6,17 @@
 <body>
 @section('content')
 <div class="jumbotron text-center">
+
+
+
+
+
         <h1> {{$title}} </h1>
         <li>
-                <a href="/atg">Records<span class="sr-only">(current)</span></a>
+                <a href="/atg">Records<span class="sr-only"></span></a>
         </li>
         <li>
-                <a href="/atg/create">Register<span class="sr-only">(current)</span></a>
+                <a href="/atg/create">Register<span class="sr-only"></span></a>
         </li>
 </div>
 @endsection

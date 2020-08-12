@@ -17,3 +17,14 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+/*
+Route::post('/contacts','ApiContactController@store');
+Route::get('/contacts','ApiContactController@index');
+Route::get('/contacts/{id}','ApiContactController@show');
+//Route::put('/contacts/{id}','ApiContactController@update');
+Route::patch('/contacts/{id}','ApiContactController@update');
+Route::delete('/contacts/{id}','ApiContactController@destroy');
+*/
+
+Route::resource('contacts','ApiContactController');

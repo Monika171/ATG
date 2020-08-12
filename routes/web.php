@@ -37,4 +37,36 @@ Route::post('/album/image','ImageController@addImage')->name('album.image');
 Route::get('albums/{id}','ImageController@show');
 Route::post('image/delete','ImageController@destroy')->name('image.delete');
 
+//////////////////////////////
+///*
+Route::get('/contacts','ContactController@index');
+Route::get('/contacts/create','ContactController@create')->name('contact.index');
+Route::post('/contacts','ContactController@store')->name('contact.store');
+Route::get('/contacts/{id}/edit','ContactController@edit')->name('contact.edit');
+Route::post('/contacts/{id}/store','ContactController@update')->name('contact.update');
+Route::get('/contacts/{id}','ContactController@show')->name('contact.show');
+Route::post('/contacts/{id}/delete','ContactController@destroy')->name('contact.destroy');
+
+//*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

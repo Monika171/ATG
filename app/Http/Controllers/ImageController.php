@@ -11,18 +11,18 @@ class ImageController extends Controller
     public function index(){
 		
 		$images = Image::get();
-		return view('home',compact('images'));
+		return view('photogallery.index',compact('images'));
 		
 	}
 	 public function album(){
 		
 		 //return $albums;
         $albums = Album::with('images')->get();
-        return view('welcome',compact('albums'));
+        return view('photogallery.albums',compact('albums'));
     }
 	    public function show($id){
         $albums = Album::findOrFail($id);
-        return view('gallery',compact('albums'));
+        return view('photogallery.gallery',compact('albums'));
 		//return $albums;
     }
 	

@@ -11,14 +11,20 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-
+*/
 
 Route::get('/', function () {
     return view('welcome');
 });
-*/
 
-Route::get('/', 'PagesController@index');
+
+//Route::get('/', 'PagesController@index');
+
+Route::resource('category','CategoryController');
+
+
+
+//////////////////////////
 
 Route::resource('atg','ATGController');
 
@@ -70,3 +76,15 @@ Route::post('/contacts/{id}/delete','ContactController@destroy')->name('contact.
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

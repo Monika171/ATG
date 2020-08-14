@@ -28,3 +28,21 @@ Route::delete('/contacts/{id}','ApiContactController@destroy');
 */
 
 Route::resource('contacts','ApiContactController');
+
+//List Articles
+
+Route::get('articles', 'ArticleController@index');
+
+//List an article
+
+Route::get('articles/{id}', 'ArticleController@show');
+
+//Create new article
+Route::post('article', 'ArticleController@store');
+
+
+//Update Article
+Route::put('article', 'ArticleController@store');
+
+//Delete Article
+Route::delete('article/{id}', 'ArticleController@destroy');

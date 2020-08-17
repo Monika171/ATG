@@ -17,12 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/', 'PagesController@index');
 
+// ORDER FOOD
 Route::resource('category','CategoryController');
-
-
+Route::resource('food','FoodController');
 
 //////////////////////////
 
@@ -33,6 +33,7 @@ Route::get('/getCities/{id}', 'ATGController@getCities');
 
 /////////////////////////
 
+// PHOTO GALLERY
 //Route::get('/','ImageController@album');
 
 Route::get('/album','ImageController@index');

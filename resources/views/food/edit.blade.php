@@ -4,14 +4,15 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-        <form action="{{route('food.store')}}" method="post" enctype="multipart/form-data" >@csrf
+        <form action="{{route('food.update',[$food->id])}}" method="post" enctype="multipart/form-data" >@csrf
+          {{method_field('PUT')}}
             <div class="card">
-                <div class="card-header">Add new food</div>
+                <div class="card-header">Update food Information</div>
 
                 <div class="card-body">
                     <div class="form-group">
                       <label for="name">Name</label>
-                      <input type="text" name="name" class="form-control @error('name') is-invalid @enderror">
+                      <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" value={{$food->name}}>
                       @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -21,7 +22,7 @@
 
                     <div class="form-group">
                       <label for="description">Description</label>
-                      <textarea name="description" class="form-control @error('description') is-invalid @enderror"></textarea>
+                      <textarea name="description" class="form-control @error('description') is-invalid @enderror">{{$food->description}}</textarea>
                       @error('description')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -30,7 +31,7 @@
                     </div>
                     <div class="form-group">
                       <label for="price">Price</label>
-                      <input type="number" name="price" class="form-control @error('price') is-invalid @enderror">
+                      <input type="number" name="price" class="form-control @error('price') is-invalid @enderror" value={{$food->price}}>
                       @error('price')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -42,7 +43,7 @@
                       <select name="category" class="form-control @error('category') is-invalid @enderror" id="">
                         <option value="">SELECT</option>
                         @foreach(App\Category::all() as $category)
-                      <option value="{{$category->id}}">{{$category->name}}</option>
+                      <option value="{{$category->id}}" {{$category->id == $food->category_id ? 'selected' : ''}}>{{$category->name}}</option>
                         @endforeach
                       </select>
                       @error('category')

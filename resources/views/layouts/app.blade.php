@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    @yield('css_1')
 {{-- Added Later --}}
 <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 

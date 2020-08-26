@@ -13,7 +13,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">        
             <div class="card">
-                <div class="card-header">All Food</div>
+                <div class="card-header">All Foods
+                    <span class="float-right">
+                    <a href="{{route('food.create')}}">
+                        <button class="btn btn-outline-secondary">Add Food</button>
+                      </a>
+                    </span>
+
+                </div>
 
                 <div class="card-body">
                   <table class="table">

@@ -5,7 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-md-8">        
             <div class="card">
-                <div class="card-header">All Category</div>
+                <div class="card-header">All categories
+                  <span class="float-right">
+                    <a href="{{route('category.create')}}">
+                        <button class="btn btn-outline-secondary">Add New Category</button>
+                      </a>
+                    </span>
+                </div>
 
                 <div class="card-body">
                   <table class="table">

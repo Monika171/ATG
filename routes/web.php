@@ -14,15 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('admin.index');
 });
+
+Auth::routes(['register'=>false]);
 
 Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/', 'PagesController@index');
 
-// ORDER FOOD
-Route::resource('category','CategoryController');
-Route::resource('food','FoodController');
+// DUMMY RESTAURANT MENU
+Route::resource('category','CategoryController')->middleware('auth');
+Route::resource('food','FoodController')->middleware('auth');
+Route::get('/listFood','FoodController@listFood'); //menu home
+Route::get('/foods/{id}','FoodController@view')->name('food.view');
 
 //////////////////////////
 
@@ -53,39 +57,3 @@ Route::get('/contacts/{id}/edit','ContactController@edit')->name('contact.edit')
 Route::post('/contacts/{id}/store','ContactController@update')->name('contact.update');
 Route::get('/contacts/{id}','ContactController@show')->name('contact.show');
 Route::post('/contacts/{id}/delete','ContactController@destroy')->name('contact.destroy');
-
-//*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

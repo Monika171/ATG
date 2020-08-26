@@ -22,6 +22,10 @@ Auth::routes(['register'=>false]);
 Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/', 'PagesController@index');
 
+//DUMMY QuiZ Module
+
+Route::resource('quiz','QuizController');
+
 // DUMMY RESTAURANT MENU
 Route::resource('category','CategoryController')->middleware('auth');
 Route::resource('food','FoodController')->middleware('auth');

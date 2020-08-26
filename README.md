@@ -18,7 +18,7 @@
 127.0.0.1 localhost
 127.0.0.1 project-name.localhost
 
-(more details so on..)
+(more details soon..)
 
 
 

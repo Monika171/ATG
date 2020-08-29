@@ -22,4 +22,8 @@ class Quiz extends Model
     public function allQuiz(){
         return Quiz::all();
     }
+
+    public function getQuizById($id) {
+        return Quiz::find($id);
+    }
 }

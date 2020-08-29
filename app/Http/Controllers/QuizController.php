@@ -60,7 +60,8 @@ class QuizController extends Controller
      */
     public function edit($id)
     {
-        //
+        $quiz = (new Quiz)->getQuizById($id);
+        return view('backend.quiz.edit', compact('quiz'));
     }
 
     /**

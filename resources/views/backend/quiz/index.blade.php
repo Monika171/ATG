@@ -35,9 +35,9 @@
 						<td>{{$quiz->description}}</td>
 						<td>{{$quiz->minutes}}</td>
 						<td>
-						<a href="{{route('quiz.question',[$quiz->id])}}">
+						{{-- <a href="{{route('quiz.question',[$quiz->id])}}">
 						<button class="btn btn-inverse">View Questions</button>
-						</a>
+						</a> --}}
 						</td>
 
 						<td>
@@ -47,17 +47,16 @@
 						</td>
 
 						<td>
-						<form id="delete-form{{$quiz->id}}" method="POST" action="{{route('quiz.destroy',[$quiz->id])}}" >@csrf
-						{{method_field('DELETE')}}
+						<form action="{{route('quiz.destroy',[$quiz->id])}}" method="POST" id="delete-form{{$quiz->id}}">@csrf
+						{{method_field('DELETE')}}									
 						</form>
-						<a href="#" onclick="if(confirm('Do you want to delete?')){
-
-						event.preventDefault();
-						document.getElementById('delete-form{{$quiz->id}}').submit()
-						}else{
-						event.preventDefault();
+						<a href="" onclick="
+						if(confirm('Do You Want To Delete?')) {
+							event.preventDefault();
+							document.getElementById('delete-form{{$quiz->id}}').submit()
+						} else {
+							event.preventDefault();
 						}
-
 						">
 						<input type="submit" value="Delete" class="btn btn-danger">
 						</a>

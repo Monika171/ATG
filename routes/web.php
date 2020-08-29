@@ -25,6 +25,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 //DUMMY QuiZ Module
 
 Route::resource('quiz','QuizController');
+Route::resource('question','QuestionController');
+
 
 // DUMMY RESTAURANT MENU
 Route::resource('category','CategoryController')->middleware('auth');

@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Quiz;
 
-class QuizController extends Controller
+class QuestionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class QuizController extends Controller
      */
     public function index()
     {
-        $quizzes = (new Quiz)->allQuiz();
-        return view('backend.quiz.index',compact('quizzes'));
+        //
     }
 
     /**
@@ -25,7 +23,7 @@ class QuizController extends Controller
      */
     public function create()
     {
-        return view('backend.quiz.create');
+        return view('backend.question.create');
     }
 
     /**
@@ -36,9 +34,7 @@ class QuizController extends Controller
      */
     public function store(Request $request)
     {
-        $data = $this->validateForm($request);
-        $quiz = (new Quiz)->storeQuiz($data);
-        return redirect()->back()->with('message','Quiz created Successfully');
+        //
     }
 
     /**
@@ -60,8 +56,7 @@ class QuizController extends Controller
      */
     public function edit($id)
     {
-        $quiz = (new Quiz)->getQuizById($id);
-        return view('backend.quiz.edit', compact('quiz'));
+        //
     }
 
     /**
@@ -73,9 +68,7 @@ class QuizController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $this->validateForm($request);
-        $quiz = (new Quiz)->updateQuiz($data,$id);
-        return redirect(route('quiz.index'))->with('message','Quiz updated Successfully!');
+        //
     }
 
     /**
@@ -86,15 +79,6 @@ class QuizController extends Controller
      */
     public function destroy($id)
     {
-        (new Quiz)->deleteQuiz($id);
-        return redirect(route('quiz.index'))->with('message','Quiz deleted Successfully!');
-    }
-
-    public function validateForm($request){
-        return $this->validate($request,[
-            'name'=>'required|string',
-            'description'=>'required|min:3|max:500',
-            'minutes'=>'required|integer'
-        ]);
+        //
     }
 }
